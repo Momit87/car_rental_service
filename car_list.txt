@@ -1,0 +1,24 @@
+Acua
+1200
+Alfa Romeo
+1000
+Audi
+1800
+BMW
+3000
+Ford
+2500
+Honda
+1300
+Hyundai
+2000
+Jeep
+2000
+Mercedes-Benz
+6700
+Mitsubishi
+3000
+Nissan
+1000
+CNG
+600
