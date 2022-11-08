@@ -84,4 +84,9 @@ void main_menu()
     {
         user_login();
     }
+    else if (choice == 3)
+    {
+        cout << "\n\nThank you for being with us\n";
+        return;
+    }
 }
