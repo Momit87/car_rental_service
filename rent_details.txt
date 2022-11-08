@@ -1,0 +1,74 @@
+                  Rent details           
+
+
+Customer name                : Asif
+Car name                     : CNG
+Car CC                       : 600CC
+Number of days               : 8
+Driver name                  : Chatar Emon
+------------------------------------------------
+Total cost                   : 7200 taka only 
+
+      Thanks for being with us
+
+----------Treat it like yours----------
+
+                  Rent details           
+
+
+Customer name                : Asif
+Car name                     : CNG
+Car CC                       : 600CC
+Number of days               : 8
+Driver name                  : Chatar Emon
+------------------------------------------------
+Total cost                   : 7200 taka only 
+
+      Thanks for being with us
+
+----------Treat it like yours----------
+                  Rent details           
+
+
+Customer name                : 
+Car name                     : Mitsubishi
+Car CC                       : 3000CC
+Number of days               : 3
+Driver name                  : Nasty Shihab
+------------------------------------------------
+Total cost                   : 13500 taka only 
+
+      Thanks for being with us
+
+----------Treat it like yours----------
+	
+                  Rent details           
+
+
+Customer name                : Momitul
+Car name                     : Mercedes-Benz
+Car CC                       : 6700CC
+Number of days               : 4
+Driver name                  : Mutual Boy Shajid
+------------------------------------------------
+Total cost                   : 40200 taka only 
+
+      Thanks for being with us
+
+----------Treat it like yours----------
+	
+                  Rent details           
+
+
+Customer name                : Shajid
+Car name                     : Jeep
+Car CC                       : 2000CC
+Number of days               : 5
+Driver name                  : Benq
+------------------------------------------------
+Total cost                   : 15000 taka only 
+
+      Thanks for being with us
+
+----------Treat it like yours----------
+	

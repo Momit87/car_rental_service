@@ -4,7 +4,6 @@
 #include <conio.h>
 #include "show_rent.h"
 
-
 #include <unistd.h>
 
 using namespace std;
@@ -30,12 +29,16 @@ public:
 
         in.close();
         string customer_name;
-        cout<<"Enter your name : ";getline(cin,customer_name);
-        cout<<endl<<endl;
+        cout << "Enter your name : ";
+        cin.ignore();
+        getline(cin, customer_name);
+        cout << endl
+             << endl;
 
         int car_num;
         cout << "Enter the number of the car that you are willing to rent : ";
         cin >> car_num;
+        cin.ignore();
         cout << endl
              << endl;
 
@@ -49,12 +52,13 @@ public:
             int num_days;
             cout << "Enter the number of days that you are willing to rent : ";
             cin >> num_days;
+            cin.ignore();
             cout << endl
                  << endl;
             if (num_days <= 10 && num_days >= 1)
             {
                 int cc = stoi(v2[car_num - 1]);
-                Showing_rent_info(customer_name,car_num,v1[car_num - 1], v2[car_num - 1], cc, num_days);
+                Showing_rent_info(customer_name, car_num, v1[car_num - 1], v2[car_num - 1], cc, num_days);
             }
             else
             {
