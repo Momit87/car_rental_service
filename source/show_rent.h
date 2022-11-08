@@ -45,4 +45,16 @@ void Showing_rent_info(string customer_name, int car_num, string str1, string st
     out << endl
         << "----------Treat it like yours----------\n\t";
     out.close();
+    cout << "                  Rent details           \n\n\n";
+    cout << "Customer name                : " << customer_name << endl;
+    cout << "Car name                     : " << str1 << "\n";
+    cout << "Car CC                       : " << str2 << "CC\n";
+    cout << "Number of days               : " << num_days << endl;
+    cout << "Driver name                  : " << v[car_num - 1] << endl;
+    cout << "------------------------------------------------\n";
+    cout << "Total cost                   : " << the_rent << " taka only \n";
+    cout << endl
+       << "      Thanks for being with us" << endl;
+    cout << endl
+        << "----------Treat it like yours----------\n\t";
 }
