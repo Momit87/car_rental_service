@@ -1,13 +1,13 @@
 Acua
 1200
 Alfa Romeo
-1000
+800
 Audi
 1800
 BMW
 3000
 Ford
-2500
+2100
 Honda
 1300
 Hyundai
