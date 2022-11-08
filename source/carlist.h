@@ -2,7 +2,6 @@
 #include <bits/stdc++.h>
 #include <fstream>
 #include <conio.h>
-
 #include <unistd.h>
 
 using namespace std;
@@ -11,7 +10,7 @@ class carlist
 public:
     void show_car_list()
     {
-        cout << "****************************************CAR DETAILS***********************************\n\n";
+        cout << "---------Car Details---------"<<endl<<endl;
         ifstream in("car_list.txt");
         string str;
         int cntr = 1;
@@ -27,6 +26,5 @@ public:
         }
 
         in.close();
-       
     }
 };

@@ -7,12 +7,12 @@
 
 using namespace std;
 
-class welcome // welcome class
+class welcome 
 {
 public:
     void welcome1()
     {
-        ifstream in("welcome.txt"); // created usinng some random website
+        ifstream in("welcome.txt"); 
         for (int i = 0; i < 8; i++)
         {
             string str;
