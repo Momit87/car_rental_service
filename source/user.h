@@ -18,6 +18,7 @@ bool user()
 {
     while (1)
     {
+    user_panel:
         pinon();
         int choices;
         cin >> choices;
@@ -38,6 +39,13 @@ bool user()
         {
 
             return false;
+        }
+        else
+        {
+            cout << "\nInvalid Option!!";
+            sleep(1);
+            system("cls");
+            goto user_panel;
         }
     }
 }
