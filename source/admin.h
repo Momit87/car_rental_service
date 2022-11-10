@@ -4,7 +4,7 @@
 #include "driverlist.h"
 using namespace std;
 
-void shihab()
+int shihab()
 {
     cout << "\n----Admin Menu----\n\n";
     cout << "1.Car List" << endl;
@@ -12,24 +12,27 @@ void shihab()
     cout << "3.Rent Details" << endl;
     cout << "4.Exit to Main Menu" << endl;
     cout << "---Select One: ";
+    int choices;
+    cin >> choices;
+    return choices;
 }
 bool admin()
 {
 
     while (1)
     {
-    admin_panel:
-        shihab();
-        int choices;
-        cin >> choices;
+
+        int choices=shihab();
         if (choices == 1)
         {
+            system("cls");
             carlist obj1;
             obj1.show_car_list();
         }
 
         else if (choices == 2)
         {
+            system("cls");
             driverlist obj2;
             obj2.show_driver_list();
         }
@@ -48,7 +51,7 @@ bool admin()
             cout << "\nInvalid Option!!";
             sleep(1);
             system("cls");
-            goto admin_panel;
+            shihab();
         }
     }
 }
