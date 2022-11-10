@@ -18,6 +18,7 @@ bool admin()
 
     while (1)
     {
+    admin_panel:
         shihab();
         int choices;
         cin >> choices;
@@ -39,7 +40,15 @@ bool admin()
         }
         else if (choices == 4)
         {
-            break;
+            return false;
+        }
+        else
+        {
+            system("cls");
+            cout << "\nInvalid Option!!";
+            sleep(1);
+            system("cls");
+            goto admin_panel;
         }
     }
 }
