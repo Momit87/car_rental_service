@@ -72,3 +72,48 @@ Total cost                   : 15000 taka only
 
 ----------Treat it like yours----------
 	
+                  Rent details           
+
+
+Customer name                : Mahir
+Car name                     : Honda
+Car CC                       : 1300CC
+Number of days               : 10
+Driver name                  : Nayeem Sir	
+------------------------------------------------
+Total cost                   : 19500 taka only 
+
+      Thanks for being with us
+
+----------Treat it like yours----------
+	
+                  Rent details           
+
+
+Customer name                : moimt
+Car name                     : Honda
+Car CC                       : 1300CC
+Number of days               : 10
+Driver name                  : Nayeem Sir	
+------------------------------------------------
+Total cost                   : 19500 taka only 
+
+      Thanks for being with us
+
+----------Treat it like yours----------
+	
+                  Rent details           
+
+
+Customer name                : MAhir
+Car name                     : Honda
+Car CC                       : 1300CC
+Number of days               : 10
+Driver name                  : Nayeem Sir	
+------------------------------------------------
+Total cost                   : 19500 taka only 
+
+      Thanks for being with us
+
+----------Treat it like yours----------
+	

@@ -39,11 +39,30 @@ bool admin()
 
         else if (choices == 3)
         {
-            cout << "Rent Details" << endl;
+            ifstream in("rent_details.txt");
+            vector<string> v;
+            string str;
+            while (getline(in, str))
+            {
+                v.push_back(str);
+            }
+            in.close();
+            
+            string strcmp="                  Rent details           ";
+            long long int cntr=1;
+            for(auto u:v){
+                if(u==strcmp){
+                    cout<<"\n\tRent details No : "<<cntr<<endl;
+                    cntr++;
+                }else{
+                cout<<u<<endl;}
+                
+            }
         }
         else if (choices == 4)
         {
             return false;
+
         }
         else
         {
