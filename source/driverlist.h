@@ -15,10 +15,10 @@ public:
         ifstream in("driver_list.txt");
         string str;
         int cntr = 1;
-        cout<<"N0   Name \n";
+        cout<<" N0 |  Name \n";
         while (getline(in, str))
         {
-            cout << cntr << " : " << str << endl
+            cout <<setw(3)<< cntr << " :  " << str << endl
                  << endl;
             cntr++;
         }
