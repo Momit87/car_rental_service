@@ -4,11 +4,13 @@
 #include <conio.h>
 using namespace std;
 
+
 void carlist_update()
 {
     ifstream in("car_list.txt");
     string car_name, cc;
     vector<string> vet, vet1;
+    ////getline(in, car_name)
     while (getline(in, car_name))
     {
         getline(in, cc);
@@ -21,6 +23,7 @@ void carlist_update()
     getline(cin, car_name);
     cout<<"\nEnter cc of the car : ";
     
+
     getline(cin, cc);
     vet.push_back(car_name);
     vet1.push_back(cc);
@@ -37,6 +40,7 @@ void carname_remove()
     ifstream in("car_list.txt");
     string car_name, cc;
     vector<string> vet, vet1;
+    /////getline(in, car_name)
     while (getline(in, car_name))
     {
         getline(in, cc);
@@ -55,6 +59,7 @@ void carname_remove()
     it = find(vet.begin(), vet.end(), car_name);
     it1 = find(vet1.begin(), vet1.end(), cc);
     
+
 
     bool flag =false;
     if (it == vet.end() || it1 == vet1.end())
