@@ -14,16 +14,16 @@ public:
         cout << "-----------Driver List-----------"<<endl<<endl;
         ifstream in("driver_list.txt");
         string str;
-        int cntr = 1;
-        cout<<" N0 |  Name \n";
+        int cntr = 0;
+        cout<<" N0 |  Name \n\n";
         while (getline(in, str))
-        {
+        {cntr++;
             cout <<setw(3)<< cntr << " :  " << str << endl
                  << endl;
-            cntr++;
+            
         }
         in.close();
-        cout << "Total Number of driver : " << cntr - 1 << endl
+        cout << "Number of driver's : " << cntr  << endl
              << endl;
     }
 };

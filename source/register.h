@@ -26,6 +26,11 @@ bool user_register()
             out << username;
             out << "\n";
             out << user_pass;
+            rent_car ob2;
+            ob2.rent_car1(username);
+            // mahir
+            // mahir
+            // mahir
             return true;
         }
         else
@@ -33,6 +38,7 @@ bool user_register()
             system("cls");
             cout << "\nDidn't match!!!";
             cout << "\nPlease re-confirm your password: ";
+            chances++;
             continue;
         }
     }

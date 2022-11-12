@@ -9,76 +9,73 @@ void main_menu();
 void admin_login();
 void user_login();
 void forgot_pass_admin();
-void forgot_pass_user();
+
 bool check_user(pair<string, string> &str);
 void admin_login()
 {
-    cout << "\nPress 1 to login or press 2 in case of you forgot your password.\n";
-    int choice;
-    cin >> choice;
-    if (choice == 1)
+
+    int chances = 0;
+    bool flag = false;
+    ifstream in("./admin_pass.txt");
+    string og_pass;
+    in >> og_pass;
+    in.close();
+    while (chances != 3)
     {
-        system("cls");
-        int chances = 0;
-        bool flag = false;
-        ifstream in("./admin_pass.txt");
-        string og_pass;
-        in >> og_pass;
-        in.close();
-        while (chances != 3)
+        string pass = login_sys_admin();
+        if (pass == og_pass)
         {
-            string pass = login_sys_admin();
-            if (pass == og_pass)
-            {
 
-                flag = true;
-                system("cls");
-                cout << "\n    Succesfully Logged in as admin!!!";
-                sleep(1);
-                system("cls");
-                bool flag = admin();
-                if (!flag)
-                {
-                    system("cls");
-                    main_menu();
-                }
-                return;
-            }
-            else
-            {
-                system("cls");
-
-                cout << "\n    You have entered wrong password" << endl;
-                cout << "\n    Please try again!!" << endl;
-                chances++;
-                flag = false;
-                sleep(1);
-                system("cls");
-            }
-        }
-        if (!flag)
-        {
+            flag = true;
             system("cls");
-
-            cout << "\nSorry you are out of chances!!!\n\n";
+            cout << "\n    Succesfully Logged in as admin!!!";
             sleep(1);
             system("cls");
-            main_menu();
+            string flag = admin();
+            if (flag == "false")
+            {
+                system("cls");
+                main_menu();
+            }
+            else if (flag == "update_pass")
+            {
+                system("cls");
+                forgot_pass_admin();
+            }
+            return;
+        }
+
+        else
+        {
+            system("cls");
+
+            cout << "\n    You have entered wrong password" << endl;
+            cout << "\n    Please try again!!" << endl;
+            chances++;
+            flag = false;
+            sleep(1);
+            system("cls");
         }
     }
-    else
+    if (!flag)
     {
-        forgot_pass_admin();
+        system("cls");
+
+        cout << "\nSorry you are out of chances!!!\n\n";
+        sleep(1);
+        system("cls");
+        main_menu();
     }
 }
 void user_login()
 {
     int chances = 0;
     bool flag = false;
+user_login_panel:
     cout << "\n Press 1 to register or press 2 for login\n";
-    int choice;
+    string choice;
     cin >> choice;
-    if (choice == 1)
+    if (choice == "1")
     {
         system("cls");
         bool reg = user_register();
@@ -105,91 +102,73 @@ void user_login()
             }
         }
     }
-    else
+    else if (choice == "2")
     {
-        string username, pass, confirm_pass;
         system("cls");
-        cin.ignore();
-        cout << "\nEnter Username: ";
-        getline(cin, username);
-        cout << "\nForgot password???? Press 1 or press 2 to proceed to login\n";
-        int choice;
-        cin >> choice;
-        if (choice == 1)
+
+        pair<string, string> uname_pass = login_sys_user();
+        bool chk_user = check_user(uname_pass);
+        if (chk_user)
         {
             system("cls");
-            forgot_pass_user();
-        }
-        else
-        {
-            pair<string, string> uname_pass = login_sys_user();
-            bool chk_user = check_user(uname_pass);
-            if (chk_user)
+            cout << "\n   Login Successful!!";
+            sleep(1);
+            system("cls");
+            rent_car ob2;
+            ob2.rent_car1(uname_pass.first);
+
+            bool u_flag = user();
+            if (!u_flag)
             {
                 system("cls");
-                cout << "\n   Login Successful!!";
-                sleep(1);
-                system("cls");
-                bool u_flag = user();
-                if (!u_flag)
-                {
-                    system("cls");
-                    main_menu();
-                }
+                main_menu();
             }
         }
-    }
-    while (chances != 3)
-    {
-        int pass;
-        if (pass == 5678)
-        {
-            flag = true;
-            bool flag = user();
-            if (!flag)
-                main_menu();
-            break;
-        }
+
         else
         {
-
-            cout << "You have entered wrong password" << endl;
-            cout << "Please try again!!" << endl;
-            chances++;
-            flag = false;
+            system("cls");
+            cout << "\n\nUser Not Found!!!";
+            sleep(1);
+            system("cls");
+            main_menu();
         }
     }
-    if (!flag)
+    else
     {
-        cout << "\nSorry you are out of chances!!!\n\n";
-        main_menu();
+        system("cls");
+        cout << "\n\nInvalid Option!!!";
+        sleep(1);
+        system("cls");
+        goto user_login_panel;
     }
 }
 void main_menu()
 {
-menu_panel:
+    welcome obj1;
+    obj1.welcome1();
     cout << "\n\n\n---------Main Menu-----------" << endl;
     cout << "1.Admin" << endl;
     cout << "2.User" << endl;
     cout << "3.Exit" << endl;
     cout << "----Chose One: ";
-    int choice;
+    string choice;
     cin >> choice;
-    if (choice == 1)
+    if (choice == "1")
     {
         system("cls");
         admin_login();
     }
-    else if (choice == 2)
+    else if (choice == "2")
     {
         system("cls");
         user_login();
     }
-    else if (choice == 3)
+    else if (choice == "3")
     {
         system("cls");
         cout << "\n\n--------Thank you for being with us-----------\n";
-        
+
         return;
     }
     else
@@ -198,77 +177,77 @@ menu_panel:
         cout << "\nInvalid Option!!!";
         sleep(1);
         system("cls");
-        goto menu_panel;
+        main_menu();
     }
 }
-// Forgot Password function for admin
+
 void forgot_pass_admin()
 {
     string new_pass, confirm_pass;
+    string old_pass;
+    ifstream in("./admin_pass.txt");
+    getline(in, old_pass);
+    in.close();
     system("cls");
     cout << "New Password: ";
-    char ch = getch();
-    while (ch != 13)
+    char ch1 = getch();
+    while (ch1 != 13)
     {
         cout << '*';
-        new_pass += ch;
-        ch = getch();
+        new_pass += ch1;
+        ch1 = getch();
     }
     cout << "\n\nConfirm Password: ";
-    int chances = 0;
-    bool confirmed = false;
-    while (chances != 2)
+
+    char ch2 = getch();
+    while (ch2 != 13)
     {
-    confirm_pass:
-        char ch = getch();
-        while (ch != 13)
+        cout << '*';
+        confirm_pass += ch2;
+        ch2 = getch();
+    }
+
+    if (new_pass == confirm_pass)
+    {
+
+        system("cls");
+        if (new_pass == old_pass)
         {
-            cout << '*';
-            confirm_pass += ch;
-            ch = getch();
-        }
-    check_pass:
-        if (new_pass == confirm_pass)
-        {
-            confirmed = true;
             system("cls");
-            cout << "\n\nPassword has been updated!!!";
-            ofstream out("./admin_pass.txt");
-            out << new_pass;
-            out.close();
+            cout << "\nThe entered password is same as the current one!!!!\n\nPlease try again!!!";
             sleep(1);
             system("cls");
-            bool flag = admin();
-            if (!flag)
-            {
-                system("cls");
-                main_menu();
-            }
+            forgot_pass_admin();
+            return;
         }
-        else
+        cout << "\n\nPassword has been updated!!!";
+        ofstream out("./admin_pass.txt");
+        out << new_pass;
+        out.close();
+        sleep(1);
+        system("cls");
+        string flag = admin();
+        if (flag == "false")
         {
-            chances++;
-            cout << "\nDidn't Match!!!";
-            cout << "\nPlease re-confirm your password: ";
-            confirmed = false;
-            goto confirm_pass;
+            system("cls");
+            main_menu();
+        }
+        else if (flag == "update_pass")
+        {
+            system("cls");
+            forgot_pass_admin();
+        
         }
     }
-    if (!confirmed)
+    else
     {
         system("cls");
         cout << "\nPlease try again!!";
         sleep(1);
         system("cls");
-        main_menu();
+        forgot_pass_admin();
+        return;
     }
-}
-
-void forgot_pass_user()
-{
-
-    cout << "matha nosto re mama!!!!" << endl;
-    return;
 }
 
 bool check_user(pair<string, string> &str)
@@ -276,7 +255,7 @@ bool check_user(pair<string, string> &str)
     string username, pass;
     ifstream in("./user_cred.txt");
 
-    while (getline(in, username) and in >> pass)
+    while (getline(in, username) and getline(in, pass))
     {
         if (username == str.first and pass == str.second)
             return true;

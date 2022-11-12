@@ -14,18 +14,19 @@ public:
              << endl;
         ifstream in("car_list.txt");
         string str;
-        int cntr = 1;
+        int cntr = 0;
         cout << " No  |    CC      |        NAME\n\n";
         while (getline(in, str))
         {
             string str1;
-            
+            cntr++;
             getline(in, str1);
             cout << setw(3)<<cntr << setw(10) << str1 <<"CC      "<<str<<endl
                 
                  << endl;
-            cntr++;
+            
         }
+        cout<< "Number of cars we have "<<cntr<<endl;
 
         in.close();
     }

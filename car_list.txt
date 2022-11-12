@@ -22,3 +22,9 @@ Nissan
 1000
 CNG
 600
+Honda Civic
+1200
+jaguar
+1092
+mahir
+1902

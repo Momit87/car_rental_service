@@ -20,6 +20,7 @@ string login_sys_admin()
 //Login system for users
 pair<string, string> login_sys_user()
 {
+    cin.ignore(); // Asiful
     cout << "\n\nEnter Username: ";
     string username;
     getline(cin, username);
