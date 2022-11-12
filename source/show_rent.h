@@ -6,10 +6,11 @@
 using namespace std;
 void Showing_rent_info(string customer_name, int car_num, string str1, string str2, int cc, int num_days)
 {
-    
+
     int the_rent = (cc * 1.5) * num_days;
     ifstream in("driver_list.txt");
     string str;
+
     vector<string> v;
     while (getline(in, str))
     {
@@ -38,10 +39,13 @@ void Showing_rent_info(string customer_name, int car_num, string str1, string st
     out << "Car name                     : " << str1 << "\n";
     out << "Car CC                       : " << str2 << "CC\n";
     out << "Number of days               : " << num_days << endl;
-    if(v[car_num - 1] != *v.end()){
-    out << "Driver name                  : " << v[car_num - 1] << endl;}
-    else{
-        out << "Driver name                  : " << v[v.size()-1] << endl;
+    if (v[car_num - 1] != *v.end())
+    {
+        out << "Driver name                  : " << v[car_num - 1] << endl;
+    }
+    else
+    {
+        out << "Driver name                  : " << v[v.size() - 1] << endl;
     }
     out << "------------------------------------------------\n";
     out << "Total cost                   : " << the_rent << " taka only \n";
@@ -55,10 +59,13 @@ void Showing_rent_info(string customer_name, int car_num, string str1, string st
     cout << "Car name                     : " << str1 << "\n";
     cout << "Car CC                       : " << str2 << "CC\n";
     cout << "Number of days               : " << num_days << endl;
-   if(v[car_num - 1] != *v.end()){
-    cout << "Driver name                  : " << v[car_num - 1] << endl;}
-    else{
-        cout << "Driver name                  : " << v[v.size()-1] << endl;
+    if (v[car_num - 1] != *v.end())
+    {
+        cout << "Driver name                  : " << v[car_num - 1] << endl;
+    }
+    else
+    {
+        cout << "Driver name                  : " << v[v.size() - 1] << endl;
     }
     cout << "------------------------------------------------\n";
     cout << "Total cost                   : " << the_rent << " taka only \n";
