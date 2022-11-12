@@ -117,3 +117,183 @@ Total cost                   : 19500 taka only
 
 ----------Treat it like yours----------
 	
+                  Rent details           
+
+
+Customer name                : mahir
+Car name                     : CNG
+Car CC                       : 600CC
+Number of days               : 1
+Driver name                  : Emon
+------------------------------------------------
+Total cost                   : 900 taka only 
+
+      Thanks for being with us
+
+----------Treat it like yours----------
+	
+                  Rent details           
+
+
+Customer name                : 
+Car name                     : CNG
+Car CC                       : 600CC
+Number of days               : 1
+Driver name                  : Emon
+------------------------------------------------
+Total cost                   : 900 taka only 
+
+      Thanks for being with us
+
+----------Treat it like yours----------
+	
+                  Rent details           
+
+
+Customer name                : 
+Car name                     : CNG
+Car CC                       : 600CC
+Number of days               : 10
+Driver name                  : Emon
+------------------------------------------------
+Total cost                   : 9000 taka only 
+
+      Thanks for being with us
+
+----------Treat it like yours----------
+	
+                  Rent details           
+
+
+Customer name                : Asiful Islam
+Car name                     : Honda
+Car CC                       : 1300CC
+Number of days               : 6
+Driver name                  : Nayeem Sir	
+------------------------------------------------
+Total cost                   : 11700 taka only 
+
+      Thanks for being with us
+
+----------Treat it like yours----------
+	
+                  Rent details           
+
+
+Customer name                : Asiful Islam
+Car name                     : Mercedes-Benz
+Car CC                       : 6700CC
+Number of days               : 5
+Driver name                  : Shajid
+------------------------------------------------
+Total cost                   : 50250 taka only 
+
+      Thanks for being with us
+
+----------Treat it like yours----------
+	
+                  Rent details           
+
+
+Customer name                : Asiful Islam
+Car name                     : Mitsubishi
+Car CC                       : 3000CC
+Number of days               : 7
+Driver name                  : Shihab 
+------------------------------------------------
+Total cost                   : 31500 taka only 
+
+      Thanks for being with us
+
+----------Treat it like yours----------
+	
+                  Rent details           
+
+
+Customer name                : Asiful Islam
+Car name                     : Jeep
+Car CC                       : 2000CC
+Number of days               : 4
+Driver name                  : Benq
+------------------------------------------------
+Total cost                   : 12000 taka only 
+
+      Thanks for being with us
+
+----------Treat it like yours----------
+	
+                  Rent details           
+
+
+Customer name                : mahir
+Car name                     : CNG
+Car CC                       : 600CC
+Number of days               : 9
+Driver name                  : Emon
+------------------------------------------------
+Total cost                   : 8100 taka only 
+
+      Thanks for being with us
+
+----------Treat it like yours----------
+	
+                  Rent details           
+
+
+Customer name                : mahir
+Car name                     : jaguar
+Car CC                       : 1092CC
+Number of days               : 10
+Driver name                  : Emon
+------------------------------------------------
+Total cost                   : 16380 taka only 
+
+      Thanks for being with us
+
+----------Treat it like yours----------
+	
+                  Rent details           
+
+
+Customer name                : mahir
+Car name                     : jaguar
+Car CC                       : 1092CC
+Number of days               : 10
+Driver name                  : mahir
+------------------------------------------------
+Total cost                   : 16380 taka only 
+
+      Thanks for being with us
+
+----------Treat it like yours----------
+	
+                  Rent details           
+
+
+Customer name                : mahir
+Car name                     : CNG
+Car CC                       : 600CC
+Number of days               : 10
+Driver name                  : Emon
+------------------------------------------------
+Total cost                   : 9000 taka only 
+
+      Thanks for being with us
+
+----------Treat it like yours----------
+	
+                  Rent details           
+
+
+Customer name                : mahir
+Car name                     : CNG
+Car CC                       : 600CC
+Number of days               : 1
+Driver name                  : Emon
+------------------------------------------------
+Total cost                   : 900 taka only 
+
+      Thanks for being with us
+
+----------Treat it like yours----------
+	
