@@ -24,7 +24,10 @@ void dr_add()
         out << u << endl;
     }
     out.close();
+
+    //dbg(str)
 }
+
 void dr_del()
 {
     ifstream in("driver_list.txt");
@@ -51,6 +54,8 @@ void dr_del()
         out << u << endl;
     }
     }
+    //cout << "\n\nDriver not found !!\n";
+    
     else
     {
         cout << "\nDriver removed succesfully !!\n";
@@ -69,6 +74,7 @@ void dr_del()
     }
     out.close();
 }
+
 void dr_up()
 {
     string drstr;
