@@ -9,7 +9,7 @@ void pinon()
 {
     cout << "\n----User Menu----\n\n";
     cout << "1.Car List" << endl;
-    
+
     cout << "2.Exit to Main Menu" << endl;
     cout << "---Select One: ";
 }
@@ -20,27 +20,23 @@ bool user()
     {
     user_panel:
         pinon();
-        int choices;
+        string choices;
         cin >> choices;
-        if (choices == 1)
+        if (choices == "1")
         {
             system("cls");
-            
+
             carlist ob1;
-            
-            
+
             ob1.show_car_list();
             rent_car ob2;
-            
+
             ob2.rent_car_num();
             ob2.rent_car_days();
         }
 
-        
-
-        else if (choices == 2)
+        else if (choices == "2")
         {
-            
 
             return false;
         }
