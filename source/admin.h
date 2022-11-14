@@ -2,6 +2,9 @@
 #include <fstream>
 #include "carlist.h"
 #include "driverlist.h"
+#include "car_list_update.h"
+#include "driver_list_update.h"
+
 using namespace std;
 
 void shihab()
@@ -70,10 +73,12 @@ string admin()
         else if (choices == "5")
         {
             // car list update
+            car_list_update();
         }
         else if (choices == "6")
         {
             // driver list update
+            dr_up();
         }
         else if (choices == "7")
         {
