@@ -7,7 +7,9 @@
 
 using namespace std;
 
-void shihab()
+    //     ...admin panel...
+
+void shihab() 
 {
     cout << "\n----Admin Menu----\n\n";
     cout << "1.Car List" << endl;
@@ -19,6 +21,8 @@ void shihab()
     cout << "7.Exit to Main Menu." << endl;
     cout << "---Select One: ";
 }
+
+        //... 
 string admin()
 {
 
