@@ -7,6 +7,7 @@ using namespace std;
 void carlist_update()
 {
     ifstream in("car_list.txt");
+    
     string car_name, cc;
     vector<string> vet, vet1;
     while (getline(in, car_name))
@@ -33,7 +34,10 @@ void carlist_update()
     out.close();
 }
 void carname_remove()
-{
+{   
+    carlist objrem;
+    objrem.show_car_list();
+    long long int car_num_re=0;
     ifstream in("car_list.txt");
     string car_name, cc;
     vector<string> vet, vet1;
@@ -42,53 +46,31 @@ void carname_remove()
         getline(in, cc);
         vet.push_back(car_name);
         vet1.push_back(cc);
+        car_num_re++;
     }
     in.close();
-    cout<<"\nEnter car name : ";
-    cin.ignore();
-    getline(cin, car_name);
+    string car_num_str;
     
-    cout<<"\nEnter cc of the car : ";
-   
-    getline(cin, cc);
-    vector<string>::iterator it, it1;
-    it = find(vet.begin(), vet.end(), car_name);
-    it1 = find(vet1.begin(), vet1.end(), cc);
-    
+    cout<<"\nEnter the number of the car you want to delete : ";cin>>car_num_str;
+    long long int car_num_num=stoi(car_num_str);
+    if(car_num_re<car_num_num||car_num_num<1){
+        cout<<"\tInvalid car number \n";
+        sleep(2);
+        system("cls");
+        carname_remove();
 
-    bool flag =false;
-    if (it == vet.end() || it1 == vet1.end())
-    {
+    }else{
         ofstream out("car_list.txt");
-        cout << "\nCar Not Found!!!" << endl;
-        for (long long int i = 0; i < vet.size(); i++)
-        {
-            
-           
-                out << vet[i] << endl
-                   << vet1[i] << endl;
-            
+        for(int i=0;i!=vet.size();i++){
+            if(i!=car_num_num-1){
+                out<<vet[i]<<endl<<vet1[i]<<endl;
+
+            }
         }
         out.close();
     }
-    else
-    {
-        cout<<"\nCar removed succesfully \n";
-        ofstream out("car_list.txt");
-        for (long long int i = 0; i < vet.size(); i++)
-        {
-            
-            if(vet[i] == car_name && vet1[i] == cc&&flag==false){
-                flag=true;
-            }
-            else{
-                out << vet[i] << endl
-                   << vet1[i] << endl;
-            }
 
-        }
-        out.close();
-    }
+    
 }
 void car_list_update()
 {

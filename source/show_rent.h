@@ -4,7 +4,7 @@
 #include <conio.h>
 
 using namespace std;
-void Showing_rent_info(string customer_name, int car_num, string str1, string str2, int cc, int num_days)
+bool Showing_rent_info(string customer_name, int car_num, string str1, string str2, int cc, int num_days)
 {
 
     int the_rent = (cc * 1.5) * num_days;
@@ -17,6 +17,12 @@ void Showing_rent_info(string customer_name, int car_num, string str1, string st
         v.push_back(str);
     }
     in.close();
+    if(v.empty()){
+        system("cls");
+        cout<<"Oops!! Sorry no driver available\n";
+        return false;
+         
+    }
     ifstream in1("rent_details.txt");
     string strshow;
     vector<string> v2;
@@ -73,4 +79,5 @@ void Showing_rent_info(string customer_name, int car_num, string str1, string st
          << "      Thanks for being with us" << endl;
     cout << endl
          << "----------Treat it like yours----------\n\t";
+         return true;
 }

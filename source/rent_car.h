@@ -7,15 +7,49 @@
 #include <unistd.h>
 using namespace std;
 void main_menu();
-long long int cntrcar=0;
-long long int cntrday=0;
+long long int cntrcar = 0;
+long long int cntrday = 0;
 long long int cntr = 0;
 long long int car_num;
 vector<string> v1, v2;
 
 string customer_name;
+void car_list_bocked_list_update(int carup)
+{
+    ofstream out("car_list.txt");
+    for (int i = 0; i != v1.size(); i++)
+    {
+        if (i != carup - 1)
+        {
+            out << v1[i] << endl;
+            out << v2[i] << endl;
+        }
+    }
+    out.close();
+    vector<string> bv1, bv2;
+    ifstream inb("bocked.txt");
+    string str;
 
+    while (getline(inb, str))
+    {
+        bv1.push_back(str);
 
+        string str1;
+
+        getline(inb, str1);
+        bv2.push_back(str1);
+    }
+    inb.close();
+    ofstream outb("bocked.txt");
+    for (int i = 0; i != bv1.size(); i++)
+    {
+        outb<< bv1[i] << endl;
+        outb << bv2[i] << endl;
+    }
+    outb << v1[carup - 1] << endl;
+    outb << v2[carup - 1] << endl;
+    outb.close();
+}
 class rent_car
 {
 public:
@@ -38,33 +72,24 @@ public:
         in.close();
     }
 
-
-
-
-
-
-
     void rent_car_num()
     {
 
-
-        string car_str ;
+        string car_str;
         cout << "\nEnter the number of the car that you are willing to rent : ";
         cin >> car_str;
 
-        car_num=stoi(car_str);
+        car_num = stoi(car_str);
         // cout<< car_num<<"\n";
         cin.ignore();
         cout << endl
              << endl;
 
-        if (car_num > cntr||car_num<1)
+        if (car_num > cntr || car_num < 1)
         {
             cout << "\t\t Invalid car Number sir \n\n";
             rent_car_num();
-
         }
-
     }
 
     void rent_car_days()
@@ -72,8 +97,8 @@ public:
         string num_str;
         int num_days;
         cout << "Enter the number of days that you are willing to rent : ";
-        cin>>num_str;
-        num_days=stoi(num_str);
+        cin >> num_str;
+        num_days = stoi(num_str);
         cin.ignore();
         cout << endl
              << endl;
@@ -82,7 +107,8 @@ public:
         {
             int cc = stoi(v2[car_num - 1]);
 
-            Showing_rent_info(customer_name, car_num, v1[car_num - 1], v2[car_num - 1], cc, num_days);
+            bool flag= Showing_rent_info(customer_name, car_num, v1[car_num - 1], v2[car_num - 1], cc, num_days);
+            if(flag==true){car_list_bocked_list_update(car_num);}
         }
         else
         {
@@ -92,6 +118,5 @@ public:
                  << "                            Minimum of 1 days\n\n";
             rent_car_days();
         }
-
     }
 };

@@ -6,17 +6,100 @@
 #include "driver_list_update.h"
 
 using namespace std;
+void bocked_car_list()
+{
+    system("cls");
+    cout << "---------Bocked Car Details---------" << endl
+         << endl;
+    ifstream in("bocked.txt");
+    string str;
+    int cntr = 0;
+    cout << " No  |    CC      |        NAME\n\n";
+    while (getline(in, str))
+    {
+        string str1;
+        cntr++;
+        getline(in, str1);
+        cout << setw(3) << cntr << setw(10) << str1 << "CC      " << str << endl
 
+             << endl;
+    }
+    cout << "Number of cars bocked " << cntr << endl;
+
+    in.close();
+}
+void bocked_list_to_car_list_update()
+{
+
+    
+    vector<string> bv1, bv2, bv3, bv4;
+    ifstream inb("bocked.txt");
+    string str;
+
+    while (getline(inb, str))
+    {
+        bv1.push_back(str);
+
+        string str1;
+
+        getline(inb, str1);
+        bv2.push_back(str1);
+    }
+    inb.close();
+    if(bv1.empty()||bv2.empty()){
+        return;
+    }
+    string choice_str;
+    cout << "\nSelect the of the car You want to remove from here : ";
+    cin >> choice_str;
+    int carup = stoi(choice_str);
+    ofstream outb("bocked.txt");
+    for (int i = 0; i != bv1.size(); i++)
+    {
+        if (i != carup - 1)
+        {
+            outb << bv1[i] << endl;
+            outb << bv2[i] << endl;
+        }
+    }
+
+    outb.close();
+    ifstream in("car_list.txt");
+
+    while (getline(in, str))
+    {
+        bv3.push_back(str);
+
+        string str1;
+
+        getline(in, str1);
+        bv4.push_back(str1);
+    }
+    in.close();
+    ofstream out("car_list.txt");
+    for (int i = 0; i != bv3.size(); i++)
+    {
+
+        out << bv3[i] << endl;
+        out << bv4[i] << endl;
+    }
+    out << bv1[carup - 1] << endl;
+    out << bv2[carup - 1] << endl;
+
+    out.close();
+}
 void shihab()
 {
     cout << "\n----Admin Menu----\n\n";
-    cout << "1.Car List" << endl;
-    cout << "2.Driver List" << endl;
-    cout << "3.Rent Details" << endl;
+    cout << "1.Available Car List." << endl;
+    cout << "2.Available Driver List." << endl;
+    cout << "3.Rent Details." << endl;
     cout << "4.Update your password." << endl;
     cout << "5.Car list Update." << endl;
     cout << "6.Driver List Update." << endl;
-    cout << "7.Exit to Main Menu." << endl;
+    cout << "7.Bocked car list." << endl;
+    cout << "8.Remove cars from bocked list." << endl;
+    cout << "9.Exit to Main Menu." << endl;
     cout << "---Select One: ";
 }
 string admin()
@@ -24,10 +107,12 @@ string admin()
 
     while (1)
     {
+
     adminPanel:
         shihab();
         string choices;
         cin >> choices;
+        system("cls");
         if (choices == "1")
         {
             carlist obj1;
@@ -81,6 +166,16 @@ string admin()
             dr_up();
         }
         else if (choices == "7")
+        {
+            bocked_car_list();
+        }
+        else if (choices == "8")
+        {
+            bocked_car_list();
+
+            bocked_list_to_car_list_update();
+        }
+        else if (choices == "9")
         {
             return "false";
         }

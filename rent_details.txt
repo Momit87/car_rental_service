@@ -297,3 +297,18 @@ Total cost                   : 900 taka only
 
 ----------Treat it like yours----------
 	
+                  Rent details           
+
+
+Customer name                : mahir
+Car name                     : Honda
+Car CC                       : 1300CC
+Number of days               : 5
+Driver name                  : Halsinky
+------------------------------------------------
+Total cost                   : 9750 taka only 
+
+      Thanks for being with us
+
+----------Treat it like yours----------
+	

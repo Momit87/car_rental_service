@@ -27,51 +27,46 @@ void dr_add()
 }
 void dr_del()
 {
+    carlist objrem;
+    objrem.show_car_list();
     ifstream in("driver_list.txt");
     string str;
-
+    long long int driver_count = 0;
     vector<string> v;
     while (getline(in, str))
     {
         v.push_back(str);
+        driver_count++;
     }
     in.close();
-    cout << "\nEnter drivers name : ";
-    cin.ignore();
-    getline(cin, str);
-    ofstream out("driver_list.txt");
-    vector<string>::iterator it, it1;
-    it = find(v.begin(), v.end(), str);
-    bool flag = false;
-    if (it == v.end())
+    string driver_num_str;
+    cout << "\nEnter the number of the driver you want to delete : ";
+    cin >> driver_num_str;
+    long long int driver_num_num = stoi(driver_num_str);
+    if (driver_count < driver_num_num || driver_num_num < 1)
     {
-        cout << "\n\nDriver not found !!\n";
-        for (auto u : v)
-    {
-        out << u << endl;
-    }
+        cout << "\tInvalid driver number \n";
+        sleep(2);
+        system("cls");
+        dr_del();
     }
     else
     {
-        cout << "\nDriver removed succesfully !!\n";
-        for (auto u : v)
+        ofstream out("driver_list.txt");
+        for (int i = 0; i != v.size(); i++)
         {
-            if (*it == u && flag == false)
+            if (i != driver_num_num - 1)
             {
-                flag=true;
-            }
-            else
-            {
-
-                out << u << endl;
+                out << v[i] << endl;
             }
         }
+        out.close();
     }
-    out.close();
 }
 void dr_up()
 {
     string drstr;
+    system("cls");
     cout << "\nPress '1' for Driver addition\n\n"
          << "Press Any key for Driver deletion\n\n"
          << "Your Choice : ";

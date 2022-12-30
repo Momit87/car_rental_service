@@ -1,15 +1,11 @@
 Acua
 1200
-Alfa Romeo
-1000
 Audi
 1800
 BMW
 3000
 Ford
 2500
-Honda
-1300
 Hyundai
 2000
 Jeep
@@ -26,5 +22,7 @@ Honda Civic
 1200
 jaguar
 1092
-mahir
-1902
+Honda
+1300
+Alfa Romeo
+1000
