@@ -26,3 +26,5 @@ Honda
 1300
 Alfa Romeo
 1000
+jaguar
+1800

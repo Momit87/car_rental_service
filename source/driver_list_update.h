@@ -27,8 +27,8 @@ void dr_add()
 }
 void dr_del()
 {
-    carlist objrem;
-    objrem.show_car_list();
+    driverlist objrem;
+    objrem.show_driver_list();
     ifstream in("driver_list.txt");
     string str;
     long long int driver_count = 0;

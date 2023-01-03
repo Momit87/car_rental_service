@@ -14,7 +14,7 @@ long long int car_num;
 vector<string> v1, v2;
 
 string customer_name;
-void car_list_bocked_list_update(int carup)
+void car_list_booked_list_update(int carup)
 {
     ofstream out("car_list.txt");
     for (int i = 0; i != v1.size(); i++)
@@ -27,7 +27,7 @@ void car_list_bocked_list_update(int carup)
     }
     out.close();
     vector<string> bv1, bv2;
-    ifstream inb("bocked.txt");
+    ifstream inb("booked.txt");
     string str;
 
     while (getline(inb, str))
@@ -40,7 +40,7 @@ void car_list_bocked_list_update(int carup)
         bv2.push_back(str1);
     }
     inb.close();
-    ofstream outb("bocked.txt");
+    ofstream outb("booked.txt");
     for (int i = 0; i != bv1.size(); i++)
     {
         outb << bv1[i] << endl;
@@ -110,7 +110,7 @@ public:
             bool flag = Showing_rent_info(customer_name, car_num, v1[car_num - 1], v2[car_num - 1], cc, num_days);
             if (flag == true)
             {
-                car_list_bocked_list_update(car_num);
+                car_list_booked_list_update(car_num);
             }
         }
         else

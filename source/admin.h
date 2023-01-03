@@ -6,10 +6,10 @@
 #include "driver_list_update.h"
 
 using namespace std;
-void show_bocked_driver_list()
+void show_booked_driver_list()
     {
-        cout << "-----------Bocked Driver List-----------"<<endl<<endl;
-        ifstream in("bocked_driver_list.txt");
+        cout << "-----------Booked Driver List-----------"<<endl<<endl;
+        ifstream in("booked_driver_list.txt");
         string str;
         int cntr = 0;
         cout<<" N0 |  Name \n\n";
@@ -23,12 +23,12 @@ void show_bocked_driver_list()
         cout << "Number of driver's : " << cntr  << endl
              << endl;
 }
-void bocked_list_to_driver_list_update()
+void booked_list_to_driver_list_update()
 {
 
     
     vector<string> bv1, bv2, bv3, bv4;
-    ifstream inb("bocked_driver_list.txt");
+    ifstream inb("booked_driver_list.txt");
     string str;
 
     while (getline(inb, str))
@@ -45,7 +45,7 @@ void bocked_list_to_driver_list_update()
     cout << "\nSelect the number of the driver You want to remove from here : ";
     cin >> choice_str;
     int drup = stoi(choice_str);
-    ofstream outb("bocked_driver_list.txt");
+    ofstream outb("booked_driver_list.txt");
     for (int i = 0; i != bv1.size(); i++)
     {
         if (i != drup - 1)
@@ -77,12 +77,12 @@ void bocked_list_to_driver_list_update()
 
     out.close();
 }
-void bocked_car_list()
+void booked_car_list()
 {
     system("cls");
-    cout << "---------Bocked Car Details---------" << endl
+    cout << "---------Booked Car Details---------" << endl
          << endl;
-    ifstream in("bocked.txt");
+    ifstream in("booked.txt");
     string str;
     int cntr = 0;
     cout << " No  |    CC      |        NAME\n\n";
@@ -95,16 +95,16 @@ void bocked_car_list()
 
              << endl;
     }
-    cout << "Number of cars bocked " << cntr << endl;
+    cout << "Number of cars booked " << cntr << endl;
 
     in.close();
 }
-void bocked_list_to_car_list_update()
+void booked_list_to_car_list_update()
 {
 
     
     vector<string> bv1, bv2, bv3, bv4;
-    ifstream inb("bocked.txt");
+    ifstream inb("booked.txt");
     string str;
 
     while (getline(inb, str))
@@ -124,7 +124,7 @@ void bocked_list_to_car_list_update()
     cout << "\nSelect the of the car You want to remove from here : ";
     cin >> choice_str;
     int carup = stoi(choice_str);
-    ofstream outb("bocked.txt");
+    ofstream outb("booked.txt");
     for (int i = 0; i != bv1.size(); i++)
     {
         if (i != carup - 1)
@@ -168,10 +168,10 @@ void shihab()
     cout << "4.Update your password." << endl;
     cout << "5.Car list Update." << endl;
     cout << "6.Driver List Update." << endl;
-    cout << "7.Show bocked car list." << endl;
-    cout << "8.Remove cars from bocked list." << endl;
-    cout << "9.Show bocked drivers list."<<endl;
-    cout << "10.Remove drivers from bocked list."<<endl;
+    cout << "7.Show booked car list." << endl;
+    cout << "8.Remove cars from booked list." << endl;
+    cout << "9.Show booked drivers list."<<endl;
+    cout << "10.Remove drivers from booked list."<<endl;
     cout << "11.Exit to Main Menu." << endl;
     cout << "---Select One: ";
 }
@@ -240,21 +240,21 @@ string admin()
         }
         else if (choices == "7")
         {
-            bocked_car_list();
+            booked_car_list();
         }
         else if (choices == "8")
         {
-            bocked_car_list();
+            booked_car_list();
 
-            bocked_list_to_car_list_update();
+            booked_list_to_car_list_update();
         }
         else if(choices == "9"){
-            show_bocked_driver_list();
+            show_booked_driver_list();
 
         }
         else if(choices == "10"){
-                show_bocked_driver_list();
-                bocked_list_to_driver_list_update();
+                show_booked_driver_list();
+                booked_list_to_driver_list_update();
         }
         else if (choices == "11")
         {

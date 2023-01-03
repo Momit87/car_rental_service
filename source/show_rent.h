@@ -4,7 +4,7 @@
 #include <conio.h>
 
 using namespace std;
-void bocked_driver_list(int driver_num){
+void booked_driver_list(int driver_num){
     ifstream in("driver_list.txt");
     string str;
     vector<string> v;
@@ -21,7 +21,7 @@ void bocked_driver_list(int driver_num){
        
     }
     out.close();
-    ifstream inb("bocked_driver_list.txt");
+    ifstream inb("booked_driver_list.txt");
     string strb;
     vector<string>vb;
     while (getline(inb, strb))
@@ -29,7 +29,7 @@ void bocked_driver_list(int driver_num){
         vb.push_back(strb);
     }
     inb.close();
-    ofstream outb("bocked_driver_list.txt");
+    ofstream outb("booked_driver_list.txt");
     for(int i=0;i!=vb.size();i++){
         
             outb<<vb[i]<<endl;
@@ -84,14 +84,14 @@ bool Showing_rent_info(string customer_name, int car_num, string str1, string st
     if (v[car_num - 1] != *v.end())
     {
         out << "Driver name                  : " << v[car_num - 1] << endl;
-        bocked_driver_list(car_num);
+        booked_driver_list(car_num);
 
     }
     else
     {
         out << "Driver name                  : " << v[v.size() - 1] << endl;
         int size_=v.size();
-        bocked_driver_list(size_);
+        booked_driver_list(size_);
 
     }
     out << "------------------------------------------------\n";
