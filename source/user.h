@@ -8,7 +8,7 @@ using namespace std;
 void pinon()
 {
     cout << "\n----User Menu----\n\n";
-    cout << "1.Car List" << endl;
+    cout << "1.Car Rent" << endl;
 
     cout << "2.Exit to Main Menu" << endl;
     cout << "---Select One: ";
