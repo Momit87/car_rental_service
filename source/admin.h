@@ -6,6 +6,77 @@
 #include "driver_list_update.h"
 
 using namespace std;
+void show_bocked_driver_list()
+    {
+        cout << "-----------Bocked Driver List-----------"<<endl<<endl;
+        ifstream in("bocked_driver_list.txt");
+        string str;
+        int cntr = 0;
+        cout<<" N0 |  Name \n\n";
+        while (getline(in, str))
+        {cntr++;
+            cout <<setw(3)<< cntr << " :  " << str << endl
+                 << endl;
+            
+        }
+        in.close();
+        cout << "Number of driver's : " << cntr  << endl
+             << endl;
+}
+void bocked_list_to_driver_list_update()
+{
+
+    
+    vector<string> bv1, bv2, bv3, bv4;
+    ifstream inb("bocked_driver_list.txt");
+    string str;
+
+    while (getline(inb, str))
+    {
+        bv1.push_back(str);
+
+       
+    }
+    inb.close();
+    if(bv1.empty()){
+        return;
+    }
+    string choice_str;
+    cout << "\nSelect the number of the driver You want to remove from here : ";
+    cin >> choice_str;
+    int drup = stoi(choice_str);
+    ofstream outb("bocked_driver_list.txt");
+    for (int i = 0; i != bv1.size(); i++)
+    {
+        if (i != drup - 1)
+        {
+            outb << bv1[i] << endl;
+            
+        }
+    }
+
+    outb.close();
+    ifstream in("driverlist.txt");
+
+    while (getline(in, str))
+    {
+        bv3.push_back(str);
+
+        
+    }
+    in.close();
+    ofstream out("driverlist.txt");
+    for (int i = 0; i != bv3.size(); i++)
+    {
+
+        out << bv3[i] << endl;
+        
+    }
+    out << bv1[drup - 1] << endl;
+   
+
+    out.close();
+}
 void bocked_car_list()
 {
     system("cls");
@@ -97,9 +168,11 @@ void shihab()
     cout << "4.Update your password." << endl;
     cout << "5.Car list Update." << endl;
     cout << "6.Driver List Update." << endl;
-    cout << "7.Bocked car list." << endl;
+    cout << "7.Show bocked car list." << endl;
     cout << "8.Remove cars from bocked list." << endl;
-    cout << "9.Exit to Main Menu." << endl;
+    cout << "9.Show bocked drivers list."<<endl;
+    cout << "10.Remove drivers from bocked list."<<endl;
+    cout << "11.Exit to Main Menu." << endl;
     cout << "---Select One: ";
 }
 string admin()
@@ -175,7 +248,15 @@ string admin()
 
             bocked_list_to_car_list_update();
         }
-        else if (choices == "9")
+        else if(choices == "9"){
+            show_bocked_driver_list();
+
+        }
+        else if(choices == "10"){
+                show_bocked_driver_list();
+                bocked_list_to_driver_list_update();
+        }
+        else if (choices == "11")
         {
             return "false";
         }

@@ -43,7 +43,7 @@ void car_list_bocked_list_update(int carup)
     ofstream outb("bocked.txt");
     for (int i = 0; i != bv1.size(); i++)
     {
-        outb<< bv1[i] << endl;
+        outb << bv1[i] << endl;
         outb << bv2[i] << endl;
     }
     outb << v1[carup - 1] << endl;
@@ -96,7 +96,7 @@ public:
     {
         string num_str;
         int num_days;
-        cout << "Enter the number of days that you are willing to rent : ";
+        cout << "\nEnter the number of days that you are willing to rent : ";
         cin >> num_str;
         num_days = stoi(num_str);
         cin.ignore();
@@ -107,8 +107,11 @@ public:
         {
             int cc = stoi(v2[car_num - 1]);
 
-            bool flag= Showing_rent_info(customer_name, car_num, v1[car_num - 1], v2[car_num - 1], cc, num_days);
-            if(flag==true){car_list_bocked_list_update(car_num);}
+            bool flag = Showing_rent_info(customer_name, car_num, v1[car_num - 1], v2[car_num - 1], cc, num_days);
+            if (flag == true)
+            {
+                car_list_bocked_list_update(car_num);
+            }
         }
         else
         {

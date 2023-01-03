@@ -4,6 +4,42 @@
 #include <conio.h>
 
 using namespace std;
+void bocked_driver_list(int driver_num){
+    ifstream in("driver_list.txt");
+    string str;
+    vector<string> v;
+    while (getline(in, str))
+    {
+        v.push_back(str);
+    }
+    in.close();
+    ofstream out("driver_list.txt");
+    for(int i=0;i!=v.size();i++){
+        if(driver_num-1!=i){
+            out<<v[i]<<endl;
+        }
+       
+    }
+    out.close();
+    ifstream inb("bocked_driver_list.txt");
+    string strb;
+    vector<string>vb;
+    while (getline(inb, strb))
+    {
+        vb.push_back(strb);
+    }
+    inb.close();
+    ofstream outb("bocked_driver_list.txt");
+    for(int i=0;i!=vb.size();i++){
+        
+            outb<<vb[i]<<endl;
+        
+       
+    }
+    outb<<v[driver_num-1]<<endl;
+    outb.close(); 
+
+}
 bool Showing_rent_info(string customer_name, int car_num, string str1, string str2, int cc, int num_days)
 {
 
@@ -19,7 +55,7 @@ bool Showing_rent_info(string customer_name, int car_num, string str1, string st
     in.close();
     if(v.empty()){
         system("cls");
-        cout<<"Oops!! Sorry no driver available\n";
+        cout<<"\nOops!! Sorry no driver available\n";
         return false;
          
     }
@@ -48,10 +84,15 @@ bool Showing_rent_info(string customer_name, int car_num, string str1, string st
     if (v[car_num - 1] != *v.end())
     {
         out << "Driver name                  : " << v[car_num - 1] << endl;
+        bocked_driver_list(car_num);
+
     }
     else
     {
         out << "Driver name                  : " << v[v.size() - 1] << endl;
+        int size_=v.size();
+        bocked_driver_list(size_);
+
     }
     out << "------------------------------------------------\n";
     out << "Total cost                   : " << the_rent << " taka only \n";
@@ -68,6 +109,7 @@ bool Showing_rent_info(string customer_name, int car_num, string str1, string st
     if (v[car_num - 1] != *v.end())
     {
         cout << "Driver name                  : " << v[car_num - 1] << endl;
+
     }
     else
     {
